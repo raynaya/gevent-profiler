@@ -163,6 +163,9 @@ class _CallSummary:
 		self.own_cumulative = 0.0
 		self.children_cumulative = 0.0
 
+	def __lt__(self, other):
+		return self.cumulative < other.cumulative
+
 def _sum_calls(state, call_summaries):
 	key = str(state)
 	if key in call_summaries:
